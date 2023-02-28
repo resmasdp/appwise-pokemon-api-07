@@ -33,6 +33,6 @@ CMD ["apache2-foreground"]
 RUN composer install
 RUN php artisan key:generate
 
-#Get SSL certificate
+#Get certbot for SSL certificate
 RUN apt install certbot python3-certbot-apache -y
-RUN certbot --apache --non-interactive --agree-tos -m daanpersoons@outlook.com -d appwise-pokemon-api.dape.tech
+
