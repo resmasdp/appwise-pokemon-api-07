@@ -37,8 +37,8 @@ pipeline {
     
         stage("Migrate and seed db") {
             steps {                
-                    catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {sh 'docker exec -it pokemon-api-appwise "php artisan migrate --force"'}
-                    catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {sh 'docker exec -it pokemon-api-appwise "php artisan db:seed"'}
+                    catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {sh 'docker exec -i pokemon-api-appwise "php artisan migrate --force"'}
+                    catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {sh 'docker exec -i pokemon-api-appwise "php artisan db:seed"'}
             }
         }
        
