@@ -34,5 +34,5 @@ RUN composer install
 RUN php artisan key:generate
 
 #Get SSL certificate
-RUN sudo apt-get install certbot python3-certbot-apache
-RUN sudo certbot --apache --non-interactive --agree-tos -m daanpersoons@outlook.com -d appwise-pokemon-api.dape.tech
+RUN apt-get install certbot python3-certbot-apache
+RUN certbot --apache --non-interactive --agree-tos -m daanpersoons@outlook.com -d appwise-pokemon-api.dape.tech
