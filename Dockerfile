@@ -35,6 +35,3 @@ RUN php artisan key:generate
 
 #Get certbot for SSL certificate
 RUN apt install certbot python3-certbot-apache -y
-RUN a2enmod proxy
-RUN a2enmod proxy_http
-RUN a2enmod headers
