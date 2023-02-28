@@ -41,6 +41,11 @@ pipeline {
                     sh 'docker exec -i pokemon-api-appwise php artisan db:seed'
             }
         }
+        stage("Get SSL certificate ") {
+            steps {                
+                    sh 'docker exec -i pokemon-api-appwise certbot --apache --non-interactive --agree-tos -m daanpersoons@outlook.com -d appwise-pokemon-api.dape.tech'
+            }
+        }
        
     }
 
