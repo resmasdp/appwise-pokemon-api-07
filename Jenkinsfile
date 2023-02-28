@@ -26,6 +26,7 @@ pipeline {
                         docker rm pokemon-api-appwise
                         '''
                     }
+                }
             }
         }
         stage("Start with new build") {
