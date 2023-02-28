@@ -20,17 +20,12 @@ pipeline {
         stage("Stop and remove old application") {
             steps {
                 script {
-                    try {
-                        sh '''
+                    catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+                    sh '''
                         docker stop pokemon-api-appwise
                         docker rm pokemon-api-appwise
                         '''
-                    } catch (Exception e) {
-                        echo 'Exception occurred: ' + e.toString()
-                        sh 'Handle the exception!'
                     }
-                }
-                
             }
         }
         stage("Start with new build") {
